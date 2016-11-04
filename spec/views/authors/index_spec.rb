@@ -9,6 +9,7 @@ describe "authors/" do
 
 		expect(rendered).to have_selector "th", text: "Name"
 
+		expect(rendered).to have_selector "a", text: "Add Author"
 
 	end
 end
