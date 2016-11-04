@@ -1,7 +1,6 @@
 class AuthorsController < ApplicationController
 
 	def new
-		@authors = Author.all
 		render "new"
 	end
 
@@ -10,6 +9,9 @@ class AuthorsController < ApplicationController
 	  @author.save
 
 	  render "new"
+	end
+
+	def show
 	end
 	 
 	private
