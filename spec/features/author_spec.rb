@@ -12,4 +12,17 @@ describe "Author new test", :type => :feature do
 
 		expect(Author.where(first_name: "Alan", last_name: "Turing", homepage: "http://wikipedia.org/wiki/Alan_Turing")).to exist
 	end
+
+	it "should update an author" do
+		@author = create(:author)
+
+		visit edit_author_path(@author)
+
+		fill_in 'First name', with: 'Alan Mathison'
+		fill_in 'Last name', with: 'Turing'
+
+		click_button 'Update Author'
+
+		expect(Author.find(@author.id).first_name).to eq 'Alan Mathison'
+	end
 end
