@@ -9,7 +9,11 @@ describe "authors/:id" do
 
 		expect(rendered).to match /Alan/
 		expect(rendered).to match /Turing/
-		expect(rendered).to match /Alan/
+
+		expect(rendered).to have_field('Title')
+		expect(rendered).to have_field('Venue')
+		expect(rendered).to have_field('Year')
+		expect(rendered).to have_button('Create Paper')
 
 
 	end
