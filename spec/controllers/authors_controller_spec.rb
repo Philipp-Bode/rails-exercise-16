@@ -11,7 +11,9 @@ RSpec.describe AuthorsController, type: :controller do
 
 	describe "GET author/:id" do
 		it "renders an authors page" do
-			get :show, id: 1
+
+			create(:author)
+			get :show, id: 0
 			expect(response).to render_template("show")
 		end
 	end

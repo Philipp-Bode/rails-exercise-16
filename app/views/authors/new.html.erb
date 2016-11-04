@@ -18,3 +18,7 @@
     <%= f.submit "Create Author" %>
   </p>
 <% end %>
+
+<% @authors.each do |author| %>
+	<%= author.inspect %> <br>
+<% end %>

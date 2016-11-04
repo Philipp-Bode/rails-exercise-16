@@ -1,6 +1,7 @@
 class AuthorsController < ApplicationController
 
 	def new
+		@authors = Author.all
 		render "new"
 	end
 
