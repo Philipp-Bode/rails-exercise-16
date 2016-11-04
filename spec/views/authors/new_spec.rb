@@ -2,6 +2,8 @@ require "capybara/rspec"
 
 describe "authors/new" do
 	it "displays a new author form" do
+		@author = Author.new
+
 		render template: "authors/new.html.erb"
 
 		expect(rendered).to have_field('First name')
