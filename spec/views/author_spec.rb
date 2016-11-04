@@ -3,7 +3,7 @@ require 'rails_helper'
 
 describe "authors/:id" do
 	it "displays author details" do
-		@authors = [create(:author)]
+		@author = create(:author)
 
 		render template: "authors/show.html.erb"
 
