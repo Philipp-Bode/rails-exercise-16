@@ -9,6 +9,13 @@ RSpec.describe AuthorsController, type: :controller do
 		end
 	end
 
+	describe "GET index" do
+		it "renders the authors index" do
+			get :index
+			expect(response).to render_template("index")
+		end
+	end
+
 	describe "GET author/:id" do
 		it "renders an authors page" do
 
