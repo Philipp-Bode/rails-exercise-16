@@ -7,7 +7,7 @@ describe "authors/" do
 
 		render template: "authors/index.html.erb"
 
-		expect(rendered).to match /Alan Turing/
+		expect(rendered).to have_selector "th", text: "Name"
 
 
 	end
