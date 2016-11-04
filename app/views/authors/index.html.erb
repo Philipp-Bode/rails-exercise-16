@@ -1,1 +1,11 @@
-test
+<% @authors.each do |author| %>
+  <p>
+    <strong>Name:</strong>
+    <%= author.name %>
+  </p>
+
+  <p>
+    <strong>Homepage:</strong>
+    <%= author.homepage %>
+  </p>
+<% end %>
