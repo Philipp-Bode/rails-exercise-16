@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Author, type: :model do
   before :each do
-  	@author = Author.create(first_name: 'Alan', last_name: 'Turing', homepage: 'http://wikipedia.org/wiki/Alan_Turing')
+  	@author = create(:author)
 	end
 
 	context "with Alan Turing as an author" do
@@ -12,6 +12,10 @@ RSpec.describe Author, type: :model do
 			expect(@author.homepage).to eq 'http://wikipedia.org/wiki/Alan_Turing'
 
 			expect(@author.name).to eq 'Alan Turing'
+		end
+
+		it "should not be valid without a last name" do
+			build(:author, last_name: "").should_not be_valid
 		end
 	end
 end
