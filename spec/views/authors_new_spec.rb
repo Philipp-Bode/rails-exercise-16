@@ -7,6 +7,7 @@ describe "authors/new" do
 		expect(rendered).to have_field('First name')
 		expect(rendered).to have_field('Last name')
 		expect(rendered).to have_field('Homepage')
+		expect(rendered).to have_button('Create Author')
 
 	end
 end
