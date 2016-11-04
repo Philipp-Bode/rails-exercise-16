@@ -1,4 +1,7 @@
-<%= form_for :author, :url => authors_path do |f| %>
+<h1>Editing article</h1>
+ 
+<%= form_for :author, url: author_path(@author), method: :patch do |f| %>
+ 
   <% if @author.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -11,13 +14,14 @@
         <% end %>
       </ul>
     </div>
-<% end %>
+  <% end %>
+ 
 
   <p>
     <%= f.label :first_name %><br>
     <%= f.text_field :first_name %>
   </p>
- 
+  
   <p>
     <%= f.label :last_name %><br>
     <%= f.text_field :last_name %>
@@ -27,8 +31,11 @@
     <%= f.label :homepage %><br>
     <%= f.text_field :homepage %>
   </p>
- 
+  
   <p>
-    <%= f.submit "Create Author" %>
+    <%= f.submit "Update Author" %>
   </p>
+ 
 <% end %>
+ 
+<%= link_to 'Back', authors_path %>
