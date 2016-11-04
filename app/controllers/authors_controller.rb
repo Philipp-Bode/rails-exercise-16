@@ -7,6 +7,8 @@ class AuthorsController < ApplicationController
 	end
 
 	def new
+		@author = Author.new
+
 		render "new"
 	end
 

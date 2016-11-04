@@ -1,4 +1,12 @@
 <%= form_for :author, :url => authors_path do |f| %>
+  <% if @author.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        last name can't be blank, mate!
+      </h2>
+    </div>
+  <% end %>
+
   <p>
     <%= f.label :first_name %><br>
     <%= f.text_field :first_name %>
