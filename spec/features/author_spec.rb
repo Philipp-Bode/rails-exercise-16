@@ -25,4 +25,14 @@ describe "Author new test", :type => :feature do
 
 		expect(Author.find(@author.id).first_name).to eq 'Alan Mathison'
 	end
+
+	it "should delete an author" do
+		@author = create(:author)
+
+		visit authors_path
+
+		click_link 'Destroy'
+
+		expect(Author.all).to be_empty
+	end
 end
