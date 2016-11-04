@@ -8,6 +8,9 @@ gem 'sqlite3'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem "nokogiri", ">= 1.6.7.rc"
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.3'
   gem 'capybara', '~> 2.5'
