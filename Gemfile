@@ -11,6 +11,10 @@ gem 'sqlite3'
 gem "nokogiri", ">= 1.6.7.rc"
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
+gem 'jquery-rails'
+gem 'turbolinks'
+
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.3'
   gem 'capybara', '~> 2.5'
