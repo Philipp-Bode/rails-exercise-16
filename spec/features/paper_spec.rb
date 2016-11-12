@@ -17,15 +17,20 @@ describe "New Paper page", :type => :feature do
 
   it "should update a paper" do
   	@paper = create(:paper)
+  	create(:author)
+  	@authors = Author.all
 
   	visit edit_paper_path(@paper)
 
   	fill_in 'Title', with: 'TDD: COMPUTING MACHINERY AND INTELLIGENCE'
+  	select "Alan Turing", :from => "paper_author_id_1"
 
 
   	click_button 'Update Paper'
 
   	expect(Paper.find(@paper.id).title).to eq 'TDD: COMPUTING MACHINERY AND INTELLIGENCE'
+  	expect(Paper.find(@paper.id).authors.first.name).to eq 'Alan Turing'
+
   end
 
   it "should delete a paper" do
