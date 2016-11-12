@@ -1,5 +1,11 @@
 class PapersController < ApplicationController
 
+	def index
+		@papers = Paper.all
+
+		render "index"
+	end
+
 	def new
 		@paper = Paper.new
 
