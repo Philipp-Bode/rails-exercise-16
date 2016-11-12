@@ -1,4 +1,4 @@
 class Paper < ActiveRecord::Base
 	belongs_to :author
-	validates :title, presence: true
+	validates_presence_of :title, :venue, :year
 end
