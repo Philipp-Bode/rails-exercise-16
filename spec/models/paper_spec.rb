@@ -9,8 +9,8 @@ RSpec.describe Paper, type: :model do
 			build(:paper, venue: "").should_not be_valid
 		end
 
-		it "should not be valid without a year" do
-			build(:paper, year: nil).should_not be_valid
+		it "should not be valid with a non-integer year" do
+			build(:paper, year: 'Early 19th century').should_not be_valid
 		end
 
 end
