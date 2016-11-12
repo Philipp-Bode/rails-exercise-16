@@ -27,4 +27,14 @@ describe "New Paper page", :type => :feature do
 
   	expect(Paper.find(@paper.id).title).to eq 'TDD: COMPUTING MACHINERY AND INTELLIGENCE'
   end
+
+  it "should delete a paper" do
+  	@paper = create(:paper)
+
+  	visit papers_path
+
+  	click_link 'Destroy'
+
+  	expect(Paper.all).to be_empty
+  end
 end
