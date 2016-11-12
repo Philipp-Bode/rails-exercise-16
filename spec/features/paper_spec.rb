@@ -42,4 +42,12 @@ describe "New Paper page", :type => :feature do
 
   	expect(Paper.all).to be_empty
   end
+
+  it "should filter if a year parameter is present" do
+  	@paper = create(:paper)
+
+  	visit papers_path(year: 2000) 
+
+  	expect(page).to_not have_text 'COMPUTING MACHINERY AND INTELLIGENCE'
+  end
 end
